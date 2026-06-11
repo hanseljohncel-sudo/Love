@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For Bebi ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+min-height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.screen{
+text-align:center;
+color:white;
+padding:20px;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.subtitle{
+font-size:1.2rem;
+margin-bottom:35px;
+}
+
+button{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:white;
+color:#ff4d6d;
+font-size:1.1rem;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.letter-container{
+display:none;
+background:rgba(255,255,255,0.96);
+max-width:850px;
+width:90%;
+padding:45px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+color:#444;
+animation:fadeIn 1s ease;
+}
+
+.letter-container h2{
+color:#ff4d6d;
+text-align:center;
+margin-bottom:25px;
+}
+
+.letter{
+line-height:1.9;
+font-size:1.1rem;
+}
+
+.signature{
+text-align:right;
+margin-top:25px;
+color:#ff4d6d;
+font-style:italic;
+font-size:1.2rem;
+}
+
+.back-btn{
+margin-top:30px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+.heart{
+position:absolute;
+color:white;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:0.8;
+}
+to{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+</head>
+<body>
+
+<!-- HOME PAGE -->
+<div class="screen" id="home">
+<h1>❤️ My Favorite Person ❤️</h1>
+<p class="subtitle">
+I made something special just for you...
+</p>
+<button onclick="showLetter()">
+Open My Letter 💌
+</button>
+</div>
+
+<!-- LETTER PAGE -->
+<div class="letter-container" id="letterPage">
+
+<h2>My Dearest Lean ❤️</h2>
+
+<div class="letter">
+<p>
+My Love,
+</p>
+
+<br>
+
+<p>
+Every day that I spend with you becomes one of my favorite memories.
+Your smile brightens my darkest days, and your love gives me strength
+whenever I need it most.
+</p>
+
+<br>
+
+<p>
+Thank you for being my safe place, my happiness, and my best friend.
+You make life feel lighter, warmer, and more beautiful than I ever
+imagined possible.
+</p>
+
+<br>
+
+<p>
+No matter what challenges come our way, please know that I will
+continue choosing you, loving you, and appreciating you every
+single day.
+</p>
+
+<br>
+
+<p>
+You are the most wonderful thing that has ever happened to me,
+and I am endlessly grateful to call you mine.
+</p>
+
+<br>
+
+<p>
+I love you today, tomorrow, and for all the days that follow.
+</p>
+
+<div class="signature">
+Forever Yours ❤️
+</div>
+</div>
+
+<button class="back-btn" onclick="goHome()">
+← Back Home
+</button>
+
+</div>
+
+<script>
+
+function showLetter(){
+document.getElementById("home").style.display="none";
+document.getElementById("letterPage").style.display="block";
+}
+
+function goHome(){
+document.getElementById("letterPage").style.display="none";
+document.getElementById("home").style.display="block";
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*window.innerWidth+"px";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+heart.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
